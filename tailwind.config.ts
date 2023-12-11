@@ -21,10 +21,12 @@ const config: Config = {
       },
       colors:{
         'dark-blue': '#1C1D26',
-        'aqua-green' : '#55B8C4'
+        'aqua-green' : '#55B8C4',
+        'background-gray': '#272833'
       },
       fontFamily: {
-        'gothic': "Pathway Gothic One"
+        'gothic': "Pathway Gothic One",
+        'raleway': "Raleway"
       }
     },
   },
