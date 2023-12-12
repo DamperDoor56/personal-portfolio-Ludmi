@@ -26,7 +26,7 @@ const config: Config = {
       },
       fontFamily: {
         'gothic': "Pathway Gothic One",
-        'raleway': "Raleway"
+        'raleway': "Railway"
       }
     },
   },
