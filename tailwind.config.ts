@@ -22,7 +22,8 @@ const config: Config = {
       colors:{
         'dark-blue': '#1C1D26',
         'aqua-green' : '#55B8C4',
-        'background-gray': '#272833'
+        'background-gray': '#272833',
+        'lily': '#BE8EFB'
       },
       fontFamily: {
         'gothic': "Pathway Gothic One",
