@@ -8,6 +8,68 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@font-face {
+  font-family: "Pathway Gothic One";
+  src: url("../public/fonts/gothic/PathwayGothicOne-Regular.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-ExtraLight.ttf") format("truetype");
+  font-weight: 50;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-SemiBold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-ExtraBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Railway";
+  src: url("../public/fonts/raleway/Raleway-Heavy.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

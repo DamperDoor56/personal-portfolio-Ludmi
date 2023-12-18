@@ -1,5 +1,11 @@
 import type { Config } from 'tailwindcss'
 
+const addVariantPlugin = 
+  function ({ addVariant }: {addVariant: Function}) {
+    addVariant('child', '& > *');
+    addVariant('child-hover', '& > *:hover');
+}
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -14,13 +20,19 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors:{
-        'dark-blue': '#1C1D26'
+        'dark-blue': '#1C1D26',
+        'aqua-green' : '#55B8C4',
+        'background-gray': '#272833',
+        'lily': '#BE8EFB'
       },
       fontFamily: {
-        'gothic': "Pathway Gothic One"
+        'gothic': "Pathway Gothic One",
+        'raleway': "Railway"
       }
     },
   },
-  plugins: [],
+plugins: [
+  addVariantPlugin
+],
 }
 export default config
