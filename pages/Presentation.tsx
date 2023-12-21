@@ -10,7 +10,9 @@ export function Presentation() {
             I&apos;m <span>Ludmila</span>, a</h1>
             <Typewriter className="pl-40 text-aqua-green whitespace-nowrap"
             texts={["Front-End Developer", "Back-End Developer", "Software Developer"]}
-            delay={200} />
+            delay={200} 
+            stopTime={2000}
+            />
             </div>
             <p className="font-light self-end text-2xl">Nice to meet you!</p>
             </div>
