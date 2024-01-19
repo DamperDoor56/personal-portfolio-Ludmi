@@ -1,6 +1,5 @@
-export type TypeWriterProps = {
+export type TextArraysAnimationProps = {
     texts: string[];
     className?: string;
-    stopTime: number;
     delay: number;
 }
