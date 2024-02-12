@@ -34,7 +34,7 @@ const TextArraysAnimation: React.FC<TextArraysAnimationProps> = ({ texts, classN
   );
 
   return (
-        <p key={currentArrayIndex} className={classNames(fadeInOutClasses, className, 'min-w-[75rem]')}>
+        <p key={currentArrayIndex} className={classNames(fadeInOutClasses, className)}>
           {texts[currentArrayIndex]}
         </p>
   );
