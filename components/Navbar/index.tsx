@@ -7,7 +7,7 @@ export const Navbar = () => {
     const [openNav, setOpenNav] = useState<boolean>(false);
 
     return (
-<nav className="bg-dark-blue px-10 pb-5 pt-5
+<nav className="bg-dark-blue px-10 pb-5 pt-3
     flex justify-center">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
     <button data-collapse-toggle="navbar-default" type="button" 
@@ -23,7 +23,7 @@ export const Navbar = () => {
      openNav ? 'opacity-100' : 'opacity-0')}>
       <ul className="child:cursor-pointer child:font-medium
         child:ease-in-out child:duration-300 z-10 child:pr-10 child:p-2 child-hover:text-aqua-green md:child-hover:bg-transparent child-hover:bg-slate-950
-       flex md:flex-row md:relative absolute md:bg-none bg-dark-blue rounded-xl flex-col gap-10 md:p-0 mt-4 text-2xl" >
+       flex md:flex-row md:relative absolute md:bg-none bg-dark-blue rounded-xl flex-col md:p-0 mt-4 text-2xl" >
         <li>
           <a href="#" aria-current="page">HOME</a>
         </li>
@@ -35,6 +35,9 @@ export const Navbar = () => {
         </li>
         <li>
           <a href="#">PROJECTS</a>
+        </li>
+        <li>
+          <a href="#">EXPERIENCE</a>
         </li>
         <li>
           <a href="#">CONTACT</a>
