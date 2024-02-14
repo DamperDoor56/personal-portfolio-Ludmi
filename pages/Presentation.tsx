@@ -1,3 +1,6 @@
+"use client"
+
+import ArrowDown from "@/looties/Arrow-down";
 import TextArraysAnimation from "../components/TextArraysAnimation";
 
 export function Presentation() {
@@ -14,6 +17,9 @@ export function Presentation() {
               className="lg:pl-40 text-aqua-green lg:text-8xl md:text-7xl text-5xl"/>
             </div>
             <p className="font-light lg:justify-self-end text-2xl">Nice to meet you!</p>
+            <aside className="w-36 justify-self-center pt-20">
+            <ArrowDown />
+            </aside>
             </div>
         </section>
     )
