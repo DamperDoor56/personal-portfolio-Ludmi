@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/Navbar'
+import { About } from '@/pages/About'
 import { Presentation } from '@/pages/Presentation'
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Presentation />
+      <About />
     </main>
   )
 }
