@@ -4,7 +4,7 @@ import GrayCircle from "@/public/assets/gray-big-circle.png";
 
 export function About() {
       return (
-        <section id="#About" className="bg-background-gray h-[80vh] font-gothic w-full gap-14 flex flex-col items-center">
+        <section id="About" className="bg-background-gray h-[80vh] font-gothic w-full gap-14 flex flex-col items-center">
             <div className="grid gap-5 text-center z-10">
             <h1 className="text-7xl">ABOUT ME</h1>
             <hr className="w-80 h-1 bg-aqua-green border-aqua-green" />

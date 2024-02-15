@@ -28,7 +28,7 @@ export const Navbar = () => {
           <a href="#" aria-current="page">HOME</a>
         </li>
         <li>
-          <a href="#">ABOUT</a>
+          <a href="#About">ABOUT</a>
         </li>
         <li>
           <a href="#">SERVICES</a>
