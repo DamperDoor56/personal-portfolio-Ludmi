@@ -32,11 +32,30 @@ export function PresentationSection() {
     return () => clearInterval(interval);
   }, []);
 
+  const bounceAnimation = {
+    y: [0, -20, 0],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  };
   return (
     <section
       className={`min-h-screen flex flex-col justify-center items-center 
       relative overflow-hidden bg-background-gray ${raleway.className}`}
     >
+      <motion.div
+        className="absolute top-[-100px] left-[-100px] md:w-[300px] w-60 h-60 md:h-[300px] rounded-full bg-aqua-green"
+        animate={bounceAnimation}
+      />
+      <motion.div
+        className="absolute bottom-[150px] right-[-50px] md:w-[200px] w-60 h-60 md:h-[200px] rounded-full bg-dark-blue"
+        animate={{
+          ...bounceAnimation,
+          transition: { ...bounceAnimation.transition, delay: 1 },
+        }}
+      />
       <div className="z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
