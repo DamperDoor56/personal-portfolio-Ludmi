@@ -1,26 +1,77 @@
-"use client"
+"use client";
 
-import ArrowDown from "@/looties/Arrow-down";
-import TextArraysAnimation from "../components/TextArraysAnimation";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { Raleway } from "next/font/google";
 
-export function Presentation() {
+const raleway = Raleway({ subsets: ["latin"] });
 
-      return (
-        <section className="bg-background-gray h-[90vh] w-full flex justify-center items-start">
-            <div className="font-raleway grid w-full justify-center pt-[10rem] xsm:text-center lg:text-start">
-            <p className="font-light self-start text-2xl">Hello there!</p>
-            <div className="font-semibold lg:text-8xl md:text-7xl text-5xl w-full">
-            <h1 className="lg:pl-20">
-            I&apos;m <span className="text-lily">Ludmila</span>, a</h1>
-              <TextArraysAnimation delay={2000} 
-              texts={['Software Developer','Back-End Developer','Front-End Developer']}
-              className="lg:pl-40 text-aqua-green lg:text-8xl md:text-7xl text-5xl"/>
-            </div>
-            <p className="font-light lg:justify-self-end text-2xl">Nice to meet you!</p>
-            <aside className="w-36 justify-self-center pt-20">
-            <ArrowDown />
-            </aside>
-            </div>
-        </section>
-    )
+const titles = [
+  "Software Developer",
+  "Front End Developer",
+  "Back End Developer",
+  "Game Developer",
+];
+
+export function PresentationSection() {
+  const [scrollY, setScrollY] = useState(0);
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 3000); // Change title every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section
+      className={`min-h-screen flex flex-col justify-center items-center 
+      relative overflow-hidden bg-background-gray ${raleway.className}`}
+    >
+      <div className="z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className=""
+        >
+          <h1 className="text-3xl md:text-6xl font-bold mb-4 text-white">
+            Hello there! I&apos;m <span className="text-lily">Ludmi</span>, a
+          </h1>
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={titles[titleIndex]}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-2xl font-bold md:text-5xl mb-6 text-[#55B8C4]"
+            >
+              {titles[titleIndex]}
+            </motion.p>
+          </AnimatePresence>
+        </motion.div>
+        <h1 className="text-2xl md:text-2xl font-bold mb-4 text-white">
+          nice to meet you!
+        </h1>
+        <motion.div
+          animate={{
+            y: Math.sin(scrollY * 0.1) * 20,
+          }}
+          className="mt-12 flex justify-center"
+        >
+          <ChevronDown className="h-12 w-12 text-white animate-bounce" />
+        </motion.div>
+      </div>
+    </section>
+  );
 }
