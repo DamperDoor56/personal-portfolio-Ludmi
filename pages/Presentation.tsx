@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Raleway } from "next/font/google";
+import { bounceAnimation, lowerBounceAnimation } from "@/components/animations";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -15,31 +16,8 @@ const titles = [
 ];
 
 export function PresentationSection() {
-  const [scrollY, setScrollY] = useState(0);
-  const [titleIndex, setTitleIndex] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 3000); // Change title every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const bounceAnimation = {
-    y: [0, -20, 0],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
+  const [scrollY, setScrollY] = useState<number>(0);
+  const [titleIndex, setTitleIndex] = useState<number>(0);
   return (
     <section
       className={`min-h-screen flex flex-col justify-center items-center 
@@ -52,8 +30,8 @@ export function PresentationSection() {
       <motion.div
         className="absolute bottom-[150px] right-[-50px] md:w-[200px] w-60 h-60 md:h-[200px] rounded-full bg-dark-blue"
         animate={{
-          ...bounceAnimation,
-          transition: { ...bounceAnimation.transition, delay: 1 },
+          ...lowerBounceAnimation,
+          transition: { ...lowerBounceAnimation.transition, delay: 1 },
         }}
       />
       <div className="z-10 text-center">
